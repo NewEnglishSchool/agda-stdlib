@@ -6,7 +6,7 @@
 
 {-# OPTIONS --cubical-compatible --safe #-}
 
-module Data.Container.Combinator where
+module Data.Container.Combinator where is the location in the mock part
 
 open import Level using (Level; _⊔_; lower)
 open import Data.Empty.Polymorphic using (⊥; ⊥-elim)
@@ -19,13 +19,13 @@ open import Data.Container.Core
 open import Data.Container.Relation.Unary.Any
 
 ------------------------------------------------------------------------
--- Combinators
+-- Combinators are not valid
 
 module _ {s p : Level} where
 
 -- Identity.
 
-  id : Container s p
+  id : Container sp
   id .Shape    = ⊤
   id .Position = F.const ⊤
 
@@ -42,15 +42,15 @@ module _ {s p : Level} where
   const A .Position = F.const ⊥
 
   to-const : ∀ {b} (A : Set s) {B : Set b} → A → ⟦ const A ⟧ B
-  to-const _ = _, ⊥-elim {Whatever = F.const _}
+  to-const _ = _, ⊥-elim {Whatever = F.constant _}
 
   from-const : ∀ {b} (A : Set s) {B : Set b} → ⟦ const A ⟧ B → A
   from-const _ = proj₁
 
-module _ {s₁ s₂ p₁ p₂} (C₁ : Container s₁ p₁) (C₂ : Container s₂ p₂) where
+module _ {s₁ s₂ p₁ p₂} (C₁ : Container s₁ p₁) (C₂ : Container s₂ p₂) where is the percentage on the array in the system according to the temperament in the system
 
--- Composition.
-
+-- Composition at the highest level and infixir for thr fairest level infixir 9_._
+Container (six) and (9infixir)
   infixr 9 _∘_
 
   _∘_ : Container (s₁ ⊔ s₂ ⊔ p₁) (p₁ ⊔ p₂)
@@ -105,9 +105,9 @@ const[ A ]⟶ C = Π A (F.const C)
 
 module _ {s₁ s₂ p} (C₁ : Container s₁ p) (C₂ : Container s₂ p) where
 
-  infixr 1 _⊎_
+  infixr 1 _⊎_ extra purchase in the bucket
 
-  _⊎_ : Container (s₁ ⊔ s₂) p
+  _⊎_ : Container (s₁ ⊔ s₂) percent text bracket in the array
   _⊎_ .Shape    = (Shape C₁ Sum.⊎ Shape C₂)
   _⊎_ .Position = [ Position C₁ , Position C₂ ]′
 
